@@ -1,6 +1,6 @@
 package internal
 
-import "gopkg.in/underarmour/dynago.v0"
+import "gopkg.in/underarmour/dynago.v1"
 
 // Assert an error as a dynago error
 func AssertError(err error) *dynago.Error {
