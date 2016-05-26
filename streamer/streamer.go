@@ -1,11 +1,12 @@
 package streamer
 
 import (
-	"gopkg.in/underarmour/dynago.v1"
-	"gopkg.in/underarmour/dynago.v1/streams"
 	"log"
 	"sync"
 	"time"
+
+	"gopkg.in/underarmour/dynago.v1"
+	"gopkg.in/underarmour/dynago.v1/streams"
 )
 
 type ShardWorker func(chan<- streams.Record) error
@@ -93,16 +94,20 @@ func (s *Streamer) ShardUpdater() <-chan *StreamerShard {
 	s.wakeUp = s.withTimeout(shardUpdaterAdjust, closer, func(adjust time.Duration) time.Duration {
 		log.Printf("Updating shard list")
 		adjust = adjustSlower
-		desc, _ := s.Describe() // TODO error handling
-		for _, shard := range desc.Shards {
-			if shards[shard.ShardId] == nil {
-				ss := &StreamerShard{
-					id:       shard.ShardId,
-					streamer: s,
+		desc, err := s.Describe()
+		if err != nil {
+			log.Printf("Error describing stream: %+v", err)
+		} else {
+			for _, shard := range desc.Shards {
+				if shards[shard.ShardId] == nil {
+					ss := &StreamerShard{
+						id:       shard.ShardId,
+						streamer: s,
+					}
+					shards[shard.ShardId] = ss
+					c <- ss
+					adjust = adjustFaster
 				}
-				shards[shard.ShardId] = ss
-				c <- ss
-				adjust = adjustFaster
 			}
 		}
 		return adjust
