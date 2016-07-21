@@ -188,6 +188,10 @@ func (s *StreamerShard) AtSequenceNum(seq string) {
 	s.myIterator(streams.IteratorAfterSequence, seq)
 }
 
+func (s *StreamerShard) HasValidIterator() bool {
+	return s.iterator != ""
+}
+
 /*
 Begin consuming this shard, yielding the results on a channel.
 This consumer will self-adjust how fast it's asking for requests
@@ -252,6 +256,8 @@ func (s *StreamerShard) myIterator(iType streams.IteratorType, sequenceNumber st
 	})
 	if err == nil {
 		s.iterator = result.ShardIterator
+	} else {
+		log.Printf("Error getting shard iterator. streamArn: %+v | shardId: %+v | type: %+v | seqNum: %+v | Error: %+v ", s.streamer.arn, s.id, iType, sequenceNumber, err)
 	}
 	return
 }
