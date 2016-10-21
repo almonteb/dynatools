@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	"github.com/crast/dynatools/safeupdate"
-	"gopkg.in/underarmour/dynago.v1"
+	"github.com/leevlad/dynago"
 )
 
 var executor dynago.Executor

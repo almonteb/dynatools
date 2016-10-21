@@ -4,7 +4,7 @@ import (
 	"sync"
 	"time"
 
-	"gopkg.in/underarmour/dynago.v1"
+	"github.com/leevlad/dynago"
 )
 
 // Configuration for the bulk writer

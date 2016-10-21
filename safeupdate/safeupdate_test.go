@@ -3,8 +3,8 @@ package safeupdate
 import (
 	"testing"
 
+	"github.com/leevlad/dynago"
 	. "github.com/smartystreets/goconvey/convey"
-	"gopkg.in/underarmour/dynago.v1"
 )
 
 func TestVariableGen(t *testing.T) {

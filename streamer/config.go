@@ -1,8 +1,8 @@
 package streamer
 
 import (
-	"gopkg.in/underarmour/dynago.v1"
-	"gopkg.in/underarmour/dynago.v1/streams"
+	"github.com/leevlad/dynago"
+	"github.com/leevlad/dynago/streams"
 )
 
 type Config struct {

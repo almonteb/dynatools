@@ -18,11 +18,12 @@ Usage:
 package credentials
 
 import (
+	"net/http"
 	"time"
 
 	"github.com/aws/aws-sdk-go/aws/credentials"
-	"gopkg.in/underarmour/dynago.v1"
-	dynaws "gopkg.in/underarmour/dynago.v1/internal/aws"
+	"github.com/leevlad/dynago"
+	dynaws "github.com/leevlad/dynago/internal/aws"
 )
 
 /*

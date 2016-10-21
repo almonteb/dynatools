@@ -5,7 +5,7 @@ import (
 	"log"
 
 	"github.com/crast/dynatools/bulk"
-	"gopkg.in/underarmour/dynago.v1"
+	"github.com/leevlad/dynago"
 )
 
 // replace with a real executor here

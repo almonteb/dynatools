@@ -5,8 +5,8 @@ import (
 	"sync"
 	"time"
 
-	"gopkg.in/underarmour/dynago.v1"
-	"gopkg.in/underarmour/dynago.v1/streams"
+	"github.com/leevlad/dynago"
+	"github.com/leevlad/dynago/streams"
 )
 
 type ShardWorker func(chan<- streams.Record) error
