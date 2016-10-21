@@ -231,7 +231,7 @@ func (s *StreamerShard) Consume() <-chan Update {
 		} else {
 			if e, ok := err.(*dynago.Error); ok {
 				switch e.Type {
-				case dynago.ErrorThrottling, dynago.ErrorThroughputExceeded, dynago.ErrorInternalFailure:
+				case dynago.ErrorThrottling, dynago.ErrorThroughputExceeded, dynago.ErrorInternalFailure, dynago.ErrorUnknown:
 					return timeout + time.Second
 				case dynago.ErrorExpiredIterator, dynago.ErrorTrimmedData:
 					// TODO determine what we do on an expired iterator
