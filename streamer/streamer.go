@@ -217,6 +217,7 @@ func (s *StreamerShard) Consume() <-chan Update {
 				Records: result.Records,
 			}
 			if result.NextShardIterator == "" {
+				log.Printf("Shard done. Result: %+v", result)
 				s.streamer.notifyShardDone(s.id)
 				return stopLoop
 			} else {
