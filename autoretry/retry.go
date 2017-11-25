@@ -2,7 +2,7 @@
 package autoretry
 
 import "time"
-import "github.com/leevlad/dynago"
+import "github.com/almonteb/dynago"
 
 type AutoRetry struct {
 	Requester  dynago.AwsRequester

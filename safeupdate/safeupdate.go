@@ -22,7 +22,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/leevlad/dynago"
+	"github.com/almonteb/dynago"
 )
 
 type Update struct {

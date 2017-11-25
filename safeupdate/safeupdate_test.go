@@ -3,7 +3,7 @@ package safeupdate
 import (
 	"testing"
 
-	"github.com/leevlad/dynago"
+	"github.com/almonteb/dynago"
 	. "github.com/smartystreets/goconvey/convey"
 )
 

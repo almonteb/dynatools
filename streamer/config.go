@@ -1,8 +1,8 @@
 package streamer
 
 import (
-	"github.com/leevlad/dynago"
-	"github.com/leevlad/dynago/streams"
+	"github.com/almonteb/dynago"
+	"github.com/almonteb/dynago/streams"
 )
 
 type Config struct {

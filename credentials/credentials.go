@@ -22,8 +22,8 @@ import (
 	"time"
 
 	"github.com/aws/aws-sdk-go/aws/credentials"
-	"github.com/leevlad/dynago"
-	dynaws "github.com/leevlad/dynago/internal/aws"
+	"github.com/almonteb/dynago"
+	dynaws "github.com/almonteb/dynago/internal/aws"
 )
 
 /*

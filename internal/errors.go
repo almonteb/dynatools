@@ -1,6 +1,6 @@
 package internal
 
-import "github.com/leevlad/dynago"
+import "github.com/almonteb/dynago"
 
 // Assert an error as a dynago error
 func AssertError(err error) *dynago.Error {

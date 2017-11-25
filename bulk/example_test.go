@@ -5,7 +5,7 @@ import (
 	"log"
 
 	"github.com/crast/dynatools/bulk"
-	"github.com/leevlad/dynago"
+	"github.com/almonteb/dynago"
 )
 
 // replace with a real executor here

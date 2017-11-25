@@ -4,7 +4,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/leevlad/dynago"
+	"github.com/almonteb/dynago"
 )
 
 // Configuration for the bulk writer
